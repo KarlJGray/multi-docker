@@ -4,7 +4,20 @@
         {
             "name": "client",
             "image": "karlgray/multi-client",
-            "hostname": "client"
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "karlgray/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "karlgray/multi-worker",
+            "hostname": "worker",
+            "essential": false
         }
     ]
 }
