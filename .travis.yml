@@ -15,3 +15,11 @@ after_success:
   - docker build -t karlgray/multi-nginx ./nginx
   - docker build -t karlgray/multi-server ./server
   - docker build -t karlgray/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push karlgray/multi-client
+  - docker push karlgray/multi-nginx
+  - docker push karlgray/multi-server
+  - docker push karlgray/multi-worker
+  
